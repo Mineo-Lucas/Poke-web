@@ -67,12 +67,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Tabla.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="masterpag.Master.cs">
+      <DependentUpon>masterpag.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterpag.Master.designer.cs">
+      <DependentUpon>masterpag.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tabla.aspx.cs">
+      <DependentUpon>Tabla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabla.aspx.designer.cs">
+      <DependentUpon>Tabla.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="masterpag.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -80,6 +96,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Dominio\Dominio.csproj">
+      <Project>{1a238527-4185-4bce-bb78-90435f521d86}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="Negocio\Negocio.csproj">
+      <Project>{9a6e3c70-7722-48b0-8c03-e7da8996ec14}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

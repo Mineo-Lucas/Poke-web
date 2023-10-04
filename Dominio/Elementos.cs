@@ -4,16 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace clases
+namespace Dominio
 {
-    public class Marcas
+    public class Elementos
     {
         public int id { get; set; }
-        public string marca { get; set; }
+        public string descripcion { get; set; }
+
+        public string debilidad { get; set; }
 
         public override string ToString()
         {
-            return marca;
+            return descripcion;
         }
+
+
+
     }
 }
