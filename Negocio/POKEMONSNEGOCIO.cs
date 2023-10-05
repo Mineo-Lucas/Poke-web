@@ -70,8 +70,7 @@ namespace Negocio
             Conexiondatos con = new Conexiondatos();
             try
             {
-                string consulta = "select Numero, Nombre,p.Descripcion,p.Id, e.Descripcion tipo,urlimagen,d.Descripcion debilidad, IdDebilidad, IdTipo  from POKEMONS p, ELEMENTOS e, ELEMENTOS d where e.Id=p.IdTipo and p.IdDebilidad=d.Id";
-                con.setearconsulta(consulta);
+                con.setearProcedure("ListarPokedex");
                 con.ejecutarlectura();
                 while (con.Lector.Read())
                 {
