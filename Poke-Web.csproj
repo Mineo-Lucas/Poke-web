@@ -67,11 +67,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Formulario.aspx" />
     <Content Include="Tabla.aspx" />
     <Content Include="Tarjetas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formulario.aspx.cs">
+      <DependentUpon>Formulario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario.aspx.designer.cs">
+      <DependentUpon>Formulario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="masterpag.Master.cs">
       <DependentUpon>masterpag.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
