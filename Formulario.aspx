@@ -4,20 +4,32 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <h1>Formulario</h1>
     <div>
-    <asp:Label ID="LblNombre" runat="server" Text="Label"></asp:Label>
-    <asp:TextBox ID="Txt Nombre" runat="server"></asp:TextBox>
+    <asp:Label ID="LblNombre" runat="server" Text="Nombre:"></asp:Label>
+    <asp:TextBox ID="TxtNombre" runat="server" CssClass="input-group-text" ></asp:TextBox>
     </div>
     <div>
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:Label ID="Label1" runat="server" Text="Descripcion:" ></asp:Label>
+    <asp:TextBox ID="TxtDescripcion" runat="server" CssClass="input-group-text"></asp:TextBox>
     </div>
     <div>
-    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+    <asp:Label ID="Label2" runat="server" Text="Numero:"></asp:Label>
+    <asp:TextBox ID="TxtNumero" runat="server" CssClass="input-group-text"></asp:TextBox>
     </div>
     <div>
-    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+    <asp:Label ID="Label3" runat="server" Text="UrlImagen:"></asp:Label>
+    <asp:TextBox ID="TxtUrlImagen" runat="server" CssClass="input-group-text"></asp:TextBox>
     </div>
+    <div>
+        <asp:Label ID="Label4" runat="server" Text="Tipo:"></asp:Label>
+        <asp:DropDownList ID="DdlTipo" runat="server"></asp:DropDownList>
+    </div>
+    <div>
+        <asp:Label ID="Label5" runat="server" Text="Debilidad:"></asp:Label>
+        <asp:DropDownList ID="DdlDebilidad" runat="server" ></asp:DropDownList>
+    </div>
+    <div>
+        <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary"/>
+    </div>
+   
     
 </asp:Content>
