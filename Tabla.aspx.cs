@@ -1,4 +1,5 @@
-﻿using Negocio;
+﻿using Dominio;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,18 @@ namespace Poke_Web
         {
             POKEMONSNEGOCIO negocio= new POKEMONSNEGOCIO();
             DgvPokedex.DataSource = negocio.ListarSP();
+            DgvPokedex.DataBind();
+        }
+
+        protected void DgvPokedex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id=DgvPokedex.SelectedDataKey.Value.ToString();
+            Response.Redirect("Formulario.aspx?Id="+ id);
+        }
+
+        protected void DgvPokedex_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            DgvPokedex.PageIndex = e.NewPageIndex;
             DgvPokedex.DataBind();
         }
     }

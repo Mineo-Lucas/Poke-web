@@ -18,17 +18,19 @@
     <div>
     <asp:Label ID="Label3" runat="server" Text="UrlImagen:"></asp:Label>
     <asp:TextBox ID="TxtUrlImagen" runat="server" CssClass="input-group-text"></asp:TextBox>
+    <asp:Image ID="Image1" runat="server" />
     </div>
     <div>
         <asp:Label ID="Label4" runat="server" Text="Tipo:"></asp:Label>
-        <asp:DropDownList ID="DdlTipo" runat="server"></asp:DropDownList>
+        <asp:DropDownList ID="DdlTipo" runat="server" CssClass="input-group-text"></asp:DropDownList>
     </div>
     <div>
         <asp:Label ID="Label5" runat="server" Text="Debilidad:"></asp:Label>
-        <asp:DropDownList ID="DdlDebilidad" runat="server" ></asp:DropDownList>
+        <asp:DropDownList ID="DdlDebilidad" runat="server" CssClass="input-group-text" ></asp:DropDownList>
     </div>
     <div>
-        <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary"/>
+        <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary" OnClick="BtnAgregar_Click"
+            />
     </div>
    
     
