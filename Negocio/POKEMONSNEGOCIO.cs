@@ -14,7 +14,7 @@ namespace Negocio
 {
     public class POKEMONSNEGOCIO
     {
-        public List<POKEMONS> Listar() 
+        public List<POKEMONS> Listar(string id) 
         {
             List<POKEMONS> lista = new List<POKEMONS>();
             SqlConnection conexion = new SqlConnection();
@@ -25,8 +25,13 @@ namespace Negocio
             {
                 conexion.ConnectionString = "server=DESKTOP-E7IU7EN\\SQLEXPRESS; database=POKEDEX_DB;integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select Numero, Nombre,p.Descripcion,p.Id, e.Descripcion tipo,urlimagen,d.Descripcion debilidad, IdDebilidad, IdTipo  from POKEMONS p, ELEMENTOS e, ELEMENTOS d where e.Id=p.IdTipo and p.IdDebilidad=d.Id and p.Activo=1";
-                comando.Connection = conexion;
+                comando.CommandText = "select Numero, Nombre,p.Descripcion,p.Id, e.Descripcion tipo,urlimagen,d.Descripcion debilidad, IdDebilidad, IdTipo  from POKEMONS p, ELEMENTOS e, ELEMENTOS d where e.Id=p.IdTipo and p.IdDebilidad=d.Id and p.Activo=1 ";
+                comando.Connection = conexion; 
+                
+                if(id != "")
+                {
+                    comando.CommandText += " and p.id=" + id;
+                }
 
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -142,7 +147,7 @@ namespace Negocio
 
                 conexion.ejecutaraccion();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -150,11 +155,38 @@ namespace Negocio
             {
                 conexion.cerrarconexion();
             }
-            
 
-            
+
+
         }
+        public void modificarconSP(POKEMONS pokimons)
+        {
+            Conexiondatos conexion = new Conexiondatos();
+            try
+            {
+                conexion.setearProcedure("StoredModificarPokemon");
+                conexion.setearparametros("@Numero", pokimons.numero);
+                conexion.setearparametros("@Nombre", pokimons.nombre);
+                conexion.setearparametros("@Descripcion", pokimons.descripcion);
+                conexion.setearparametros("@Url", pokimons.urlimagen);
+                conexion.setearparametros("@IdTipo", pokimons.Tipo.id);
+                conexion.setearparametros("@IdDebilidad", pokimons.debilidad.id);
+                conexion.setearparametros("@Id", pokimons.Id);
 
+                conexion.ejecutaraccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
+
+
+
+        }
         public void eliminar(int id)
         {
             Conexiondatos conec=new Conexiondatos();

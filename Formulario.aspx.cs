@@ -15,20 +15,69 @@ namespace Poke_Web
         {
             ElementosNegocio nego= new ElementosNegocio();
             List<Elementos> lista= nego.Listar();
-            DdlTipo.DataSource = lista;
-            DdlTipo.DataValueField = "Id";
-            DdlTipo.DataTextField = "Descripcion";
-            DdlTipo.DataBind();
+            if (!IsPostBack)
+            {
+                DdlTipo.DataSource = lista;
+                DdlTipo.DataValueField = "Id";
+                DdlTipo.DataTextField = "Descripcion";
+                DdlTipo.DataBind();
 
-            DdlDebilidad.DataSource = lista;
-            DdlDebilidad.DataValueField = "Id";
-            DdlDebilidad.DataTextField = "Descripcion";
-            DdlDebilidad.DataBind();
+                DdlDebilidad.DataSource = lista;
+                DdlDebilidad.DataValueField = "Id";
+                DdlDebilidad.DataTextField = "Descripcion";
+                DdlDebilidad.DataBind();
+            }
+
+            string id= Request.QueryString["id"] != null ? Request.QueryString["id"].ToString():"";
+            if (id != "" && !IsPostBack)
+            {
+                POKEMONSNEGOCIO negocio = new POKEMONSNEGOCIO();
+                POKEMONS seleccionado = (negocio.Listar(id))[0];
+                
+                TxtId.Text= seleccionado.Id.ToString();
+                TxtNombre.Text = seleccionado.nombre;
+                TxtNumero.Text = seleccionado.numero.ToString();
+                TxtDescripcion.Text = seleccionado.descripcion;
+                TxtUrlImagen.Text = seleccionado.urlimagen;
+                DdlDebilidad.SelectedValue = seleccionado.debilidad.id.ToString();
+                DdlTipo.SelectedValue=seleccionado.Tipo.id.ToString();
+
+            }
         }
 
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
+            POKEMONS poke= new POKEMONS();
+            POKEMONSNEGOCIO listanuevo = new POKEMONSNEGOCIO();
+            try
+            {
+                poke.numero = int.Parse(TxtNumero.Text);
+                poke.nombre = TxtNombre.Text;
+                poke.urlimagen = TxtUrlImagen.Text;
+                poke.descripcion = TxtDescripcion.Text;
+                poke.Tipo = new Elementos();
+                poke.Tipo.id = int.Parse(DdlTipo.SelectedValue);
+                poke.debilidad = new Elementos();
+                poke.debilidad.id = int.Parse(DdlDebilidad.SelectedValue);
 
+                if (Request.QueryString["id"]!= null)
+                {
+                    poke.Id = int.Parse(TxtId.Text);
+                    listanuevo.modificarconSP(poke);
+                }
+                else
+                {
+                     listanuevo.ingresar(poke);
+                }
+                
+                Response.Redirect("Tabla.aspx");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
         }
     }
 }

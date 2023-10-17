@@ -4,6 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <h1>Formulario</h1>
     <div>
+        <asp:TextBox ID="TxtId" runat="server"></asp:TextBox>
+    </div>
+    <div>
     <asp:Label ID="LblNombre" runat="server" Text="Nombre:"></asp:Label>
     <asp:TextBox ID="TxtNombre" runat="server" CssClass="input-group-text" ></asp:TextBox>
     </div>
@@ -29,8 +32,8 @@
         <asp:DropDownList ID="DdlDebilidad" runat="server" CssClass="input-group-text" ></asp:DropDownList>
     </div>
     <div>
-        <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary" OnClick="BtnAgregar_Click"
-            />
+        <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary" OnClick="BtnAgregar_Click"/>
+        <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger"/>
     </div>
    
     
