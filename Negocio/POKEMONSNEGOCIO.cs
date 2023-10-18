@@ -212,7 +212,7 @@ namespace Negocio
                 string consulta = "select Numero, Nombre,p.Descripcion,p.Id, e.Descripcion tipo,urlimagen,d.Descripcion debilidad, IdDebilidad, IdTipo  from POKEMONS p, ELEMENTOS e, ELEMENTOS d where e.Id=p.IdTipo and p.IdDebilidad=d.Id and ";
                 try
                 {
-                    if (campo == "nombre")
+                    if (campo == "Nombre")
                     {
                         switch (criterio)
                         {
@@ -227,19 +227,19 @@ namespace Negocio
                                 consulta += "Nombre like '%"+ filtroavanzado+"%'";
                                 break;
                         }
-                    }else if(campo == "descripcion")
+                    }else if(campo == "Tipo")
                     {
                         switch (criterio)
                         {
                             case "comienza con":
-                                consulta += "p.Descripcion like'" + filtroavanzado + "%'";
+                                consulta += "e.Descripcion like'" + filtroavanzado + "%'";
                                 break;
                             case "termina con":
-                                consulta += "p.Descripcion like '%" + filtroavanzado + "'";
+                                consulta += "e.Descripcion like '%" + filtroavanzado + "'";
                                 break;
 
                             default:
-                                consulta += "p.Descripcion like '%" + filtroavanzado + "%'";
+                                consulta += "e.Descripcion like '%" + filtroavanzado + "%'";
                                 break;
                         }
                     }

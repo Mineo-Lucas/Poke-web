@@ -33,7 +33,7 @@
     </div>
     <div>
         <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary" OnClick="BtnAgregar_Click"/>
-        <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger"/>
+        <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClick="BtnEliminar_Click"/>
     </div>
    
     

@@ -79,5 +79,13 @@ namespace Poke_Web
             }
            
         }
+
+        protected void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            POKEMONSNEGOCIO seleccionado = new POKEMONSNEGOCIO();
+            int id= int.Parse(Request.QueryString["id"]);
+            seleccionado.eliminar(id);
+            Response.Redirect("Tabla.aspx");
+        }
     }
 }
