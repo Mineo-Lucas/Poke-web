@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Formulario.aspx" />
+    <Content Include="Registrarse.aspx" />
     <Content Include="Tabla.aspx" />
     <Content Include="Tarjetas.aspx" />
     <Content Include="Web.config" />
@@ -88,6 +89,13 @@
       <DependentUpon>masterpag.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrarse.aspx.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrarse.aspx.designer.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabla.aspx.cs">
       <DependentUpon>Tabla.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

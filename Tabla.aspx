@@ -1,4 +1,5 @@
 ﻿
+
 <%@ Page Title="" Language="C#" MasterPageFile="~/masterpag.Master" AutoEventWireup="true" CodeBehind="Tabla.aspx.cs" Inherits="Poke_Web.Tabla" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
