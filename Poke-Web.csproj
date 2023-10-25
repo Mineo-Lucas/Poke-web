@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Formulario.aspx" />
+    <Content Include="Logueado.aspx" />
+    <Content Include="NoLogueado.aspx" />
     <Content Include="Registrarse.aspx" />
     <Content Include="Tabla.aspx" />
     <Content Include="Tarjetas.aspx" />
@@ -81,12 +83,26 @@
     <Compile Include="Formulario.aspx.designer.cs">
       <DependentUpon>Formulario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logueado.aspx.cs">
+      <DependentUpon>Logueado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logueado.aspx.designer.cs">
+      <DependentUpon>Logueado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="masterpag.Master.cs">
       <DependentUpon>masterpag.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="masterpag.Master.designer.cs">
       <DependentUpon>masterpag.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NoLogueado.aspx.cs">
+      <DependentUpon>NoLogueado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NoLogueado.aspx.designer.cs">
+      <DependentUpon>NoLogueado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registrarse.aspx.cs">

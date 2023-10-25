@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
+using Negocio;
 
 namespace Poke_Web
 {
@@ -16,7 +18,27 @@ namespace Poke_Web
 
         protected void BtnAceptar_Click(object sender, EventArgs e)
         {
+            UserNegocio nego = new UserNegocio();
+            Usuario usuario;
+            try
+            {
+                usuario = new Usuario(TxtUser.Text, TxtPass.Text, false);
+                if (nego.Loguear(usuario))
+                {
+                    Session.Add("usuario", usuario);
+                    Response.Redirect("Logueado.aspx");
+                }
+                else
+                {
+                    Response.Redirect("NoLogueado.aspx");
+                }
 
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error",ex.ToString());
+            }    
         }
     }
 }
