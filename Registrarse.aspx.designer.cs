@@ -11,26 +11,26 @@ namespace Poke_Web
 {
 
 
-    public partial class Registrarse
+    public partial class Registro
     {
 
         /// <summary>
-        /// Control LblUser.
+        /// Control LblEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblUser;
+        protected global::System.Web.UI.WebControls.Label LblEmail;
 
         /// <summary>
-        /// Control TxtUser.
+        /// Control TxtEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtUser;
+        protected global::System.Web.UI.WebControls.TextBox TxtEmail;
 
         /// <summary>
         /// Control LblPass.
@@ -51,12 +51,12 @@ namespace Poke_Web
         protected global::System.Web.UI.WebControls.TextBox TxtPass;
 
         /// <summary>
-        /// Control BtnAceptar.
+        /// Control BtnRegistrarse.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAceptar;
+        protected global::System.Web.UI.WebControls.Button BtnRegistrarse;
     }
 }

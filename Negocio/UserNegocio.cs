@@ -1,6 +1,7 @@
 ﻿using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,8 @@ namespace Negocio
             Conexiondatos cone = new Conexiondatos();
             try
             {
-                cone.setearconsulta("select Id, Tipo from Usuarios where Usuario = @Usuario AND Contraseña = @Contraseña");
-                cone.setearparametros("@Usuario", usuario.User);
+                cone.setearconsulta("select Id, Tipo from Usuarios where Email = @Email AND Contraseña = @Contraseña");
+                cone.setearparametros("@Email", usuario.Email);
                 cone.setearparametros("@Contraseña", usuario.Pass);
 
                 cone.ejecutarlectura();
@@ -36,6 +37,27 @@ namespace Negocio
             {
                 cone.cerrarconexion();
             }
+        }
+        public int Registrarse(Usuario nuevo)
+        {
+            Conexiondatos conec = new Conexiondatos();
+            try
+            {
+                conec.setearProcedure("RegistrarUsuario");
+                conec.setearparametros("@Email", nuevo.Email);
+                conec.setearparametros("@Contraseña", nuevo.Pass);
+                return conec.EjecutarAccionScalar();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conec.cerrarconexion();
+            }
+            
         }
     }      
 }

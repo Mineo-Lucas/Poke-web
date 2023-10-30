@@ -9,36 +9,34 @@ using Negocio;
 
 namespace Poke_Web
 {
-    public partial class Registrarse : System.Web.UI.Page
+    public partial class Registro : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void BtnAceptar_Click(object sender, EventArgs e)
+        protected void BtnRegistrarse_Click(object sender, EventArgs e)
         {
-            UserNegocio nego = new UserNegocio();
-            Usuario usuario;
             try
             {
-                usuario = new Usuario(TxtUser.Text, TxtPass.Text, false);
-                if (nego.Loguear(usuario))
-                {
-                    Session.Add("usuario", usuario);
-                    Response.Redirect("Logueado.aspx");
-                }
-                else
-                {
-                    Response.Redirect("NoLogueado.aspx");
-                }
-
+                Usuario nuevo = new Usuario(TxtEmail.Text, TxtPass.Text, false) ; 
+                UserNegocio conec= new UserNegocio();
+                EmailService enviarEmail = new EmailService() ;
+                //nuevo.Email = TxtEmail.Text;
+                //nuevo.Pass = TxtPass.Text;
+                nuevo.Id= conec.Registrarse(nuevo);
+                Session.Add("usuario", nuevo);
+                //enviarEmail.ArmarCorreo(nuevo.Email, "Bienvenidooo", "holaaa nuevo integrante");
+                //enviarEmail.EnviarEmail();
+                Response.Redirect("Tarjetas.aspx", false);
             }
             catch (Exception ex)
             {
 
-                Session.Add("error",ex.ToString());
-            }    
+                Session.Add("Error", ex);
+            }
+
         }
     }
 }

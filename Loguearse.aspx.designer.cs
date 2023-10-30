@@ -11,52 +11,52 @@ namespace Poke_Web
 {
 
 
-    public partial class masterpag
+    public partial class Registrarse
     {
 
         /// <summary>
-        /// Control head.
+        /// Control LblEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label LblEmail;
 
         /// <summary>
-        /// Control form1.
+        /// Control TxtEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox TxtEmail;
 
         /// <summary>
-        /// Control BtnSalir.
+        /// Control LblPass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSalir;
+        protected global::System.Web.UI.WebControls.Label LblPass;
 
         /// <summary>
-        /// Control ImgPerfil.
+        /// Control TxtPass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImgPerfil;
+        protected global::System.Web.UI.WebControls.TextBox TxtPass;
 
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control BtnAceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button BtnAceptar;
     }
 }

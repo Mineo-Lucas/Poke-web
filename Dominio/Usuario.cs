@@ -17,10 +17,11 @@ namespace Dominio
         public string User { get; set; }
         public string Pass { get; set; }
         public TipoUsuario TipoUser { get; set; }
+        public string Email { get; set; }
 
-        public Usuario(string user, string pass, bool admin)
+        public Usuario(string email, string pass, bool admin)
         {
-            User = user;
+            Email = email;
             Pass = pass;
             TipoUser= admin ? TipoUsuario.admin : TipoUsuario.Normal;
 

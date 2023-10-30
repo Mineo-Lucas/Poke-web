@@ -11,7 +11,11 @@ namespace Poke_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["usuario"]==null)
+            {
+                Session.Add("error", "debes loguearte para ingresar");
+                Response.Redirect("NoLogueado.aspx",false);
+            }
         }
     }
 }

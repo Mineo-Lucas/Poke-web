@@ -67,15 +67,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EnviarEmail.aspx" />
     <Content Include="Formulario.aspx" />
     <Content Include="Logueado.aspx" />
     <Content Include="NoLogueado.aspx" />
+    <Content Include="Loguearse.aspx" />
     <Content Include="Registrarse.aspx" />
     <Content Include="Tabla.aspx" />
     <Content Include="Tarjetas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnviarEmail.aspx.cs">
+      <DependentUpon>EnviarEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnviarEmail.aspx.designer.cs">
+      <DependentUpon>EnviarEmail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulario.aspx.cs">
       <DependentUpon>Formulario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,6 +114,13 @@
       <DependentUpon>NoLogueado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Loguearse.aspx.cs">
+      <DependentUpon>Loguearse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Loguearse.aspx.designer.cs">
+      <DependentUpon>Loguearse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registrarse.aspx.cs">
       <DependentUpon>Registrarse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
