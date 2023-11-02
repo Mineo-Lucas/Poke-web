@@ -70,6 +70,7 @@
     <Content Include="EnviarEmail.aspx" />
     <Content Include="Formulario.aspx" />
     <Content Include="Logueado.aspx" />
+    <Content Include="MiPerfil.aspx" />
     <Content Include="NoLogueado.aspx" />
     <Content Include="Loguearse.aspx" />
     <Content Include="Registrarse.aspx" />
@@ -105,6 +106,13 @@
     </Compile>
     <Compile Include="masterpag.Master.designer.cs">
       <DependentUpon>masterpag.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MiPerfil.aspx.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MiPerfil.aspx.designer.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="NoLogueado.aspx.cs">
       <DependentUpon>NoLogueado.aspx</DependentUpon>
@@ -162,6 +170,9 @@
       <Project>{9a6e3c70-7722-48b0-8c03-e7da8996ec14}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagenes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

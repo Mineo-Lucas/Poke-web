@@ -59,5 +59,29 @@ namespace Negocio
             }
             
         }
+        public int modificar(Usuario nuevo)
+        {
+            Conexiondatos conec = new Conexiondatos();
+            try
+            {
+                conec.setearconsulta("update Usuarios set Nombre=@Nombre,Apellido=@Apellido,ImagenPerfil=@Imagen,FechaNacimiento=@FechaNacimiento where Id=@Id");
+                conec.setearparametros("@Nombre", nuevo.Nombre);
+                conec.setearparametros("@Apellido", nuevo.Apellido);
+                conec.setearparametros("@Imagen", nuevo.UrlImagen);
+                conec.setearparametros("@Fecha nacimiento", nuevo.FechaNacimiento);
+                conec.setearparametros("@Id", nuevo.Id);
+                return conec.EjecutarAccionScalar();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conec.cerrarconexion();
+            }
+
+        }
     }      
 }
