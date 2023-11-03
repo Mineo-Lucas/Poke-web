@@ -25,7 +25,7 @@ namespace Poke_Web
                 string ruta = Server.MapPath("./Imagenes/");
                 TxtImagen.PostedFile.SaveAs(ruta+"perfil"+ user.Id+".jpg");
 
-                user.UrlImagen ="perfil" + user.Id + ".jpg";
+                user.UrlImagen ="Perfil" + user.Id + ".jpg";
                 nego.modificar(user);
 
                 Image img = (Image)Master.FindControl("ImgPerfil");

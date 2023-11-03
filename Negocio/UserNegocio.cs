@@ -15,7 +15,7 @@ namespace Negocio
             Conexiondatos cone = new Conexiondatos();
             try
             {
-                cone.setearconsulta("select Id, Tipo from Usuarios where Email = @Email AND Contraseña = @Contraseña");
+                cone.setearconsulta("select Id, Tipo, ImagenPerfil,Nombre,Apellido,Usuario,FechaNacimiento from Usuarios where Email = @Email AND Contraseña = @Contraseña");
                 cone.setearparametros("@Email", usuario.Email);
                 cone.setearparametros("@Contraseña", usuario.Pass);
 
@@ -24,6 +24,12 @@ namespace Negocio
                 {
                     usuario.Id = (int)cone.Lector["Id"];
                     usuario.TipoUser = ((int)cone.Lector["Tipo"]) == 2 ? TipoUsuario.admin : TipoUsuario.Normal;
+                    usuario.Nombre = cone.Lector["Nombre"].ToString();
+                    usuario.Apellido = cone.Lector["Apellido"].ToString();
+                    usuario.FechaNacimiento = (DateTime)cone.Lector["FechaNacimiento"];
+                    usuario.User = cone.Lector["Usuario"].ToString();
+                    usuario.UrlImagen = cone.Lector["ImagenPerfil"].ToString();
+                    
                     return true;
                 }
                 return false;
@@ -64,11 +70,11 @@ namespace Negocio
             Conexiondatos conec = new Conexiondatos();
             try
             {
-                conec.setearconsulta("update Usuarios set Nombre=@Nombre,Apellido=@Apellido,ImagenPerfil=@Imagen,FechaNacimiento=@FechaNacimiento where Id=@Id");
+                conec.setearconsulta("update Usuarios set Nombre=@Nombre,Apellido=@Apellido,ImagenPerfil=@ImagenPerfil,FechaNacimiento=@FechaNacimiento where Id=@Id");
                 conec.setearparametros("@Nombre", nuevo.Nombre);
                 conec.setearparametros("@Apellido", nuevo.Apellido);
-                conec.setearparametros("@Imagen", nuevo.UrlImagen);
-                conec.setearparametros("@Fecha nacimiento", nuevo.FechaNacimiento);
+                conec.setearparametros("@ImagenPerfil", nuevo.UrlImagen);
+                conec.setearparametros("@Fechanacimiento", nuevo.FechaNacimiento);
                 conec.setearparametros("@Id", nuevo.Id);
                 return conec.EjecutarAccionScalar();
             }
